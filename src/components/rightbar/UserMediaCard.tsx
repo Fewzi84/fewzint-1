@@ -11,7 +11,7 @@ const UserMediaCard = async ({ user }: { user: User }) => {
       },
     },
     take: 8,
-    select: { image: true },
+    select: { image: true, id: true },
     orderBy: {
       createdAt: "desc",
     },
@@ -29,7 +29,7 @@ const UserMediaCard = async ({ user }: { user: User }) => {
       <div className="flex gap-4 justify-between flex-wrap">
         {usermedia.length
           ? usermedia.map((media) => (
-              <div className="relative w-1/5 h-24">
+              <div className="relative w-1/5 h-24" key={media.id}>
                 <Image
                   src={media.image!}
                   alt=""

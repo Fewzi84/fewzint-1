@@ -22,7 +22,7 @@ const FriendRequestList = ({ requests }: { requests: FollowRequests[] }) => {
     <div className="">
       {requests.length
         ? requests.map((r) => (
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between" key={r.id}>
               <div className="flex items-center gap-4">
                 <Image
                   src={r.sender.avator || "/noAvatar.png"}
